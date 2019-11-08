@@ -19,19 +19,16 @@ public abstract class AbstractAnimal implements Animal {
         return Duration.between(LocalDate.now(), dateOfBirth);
     }
 
-    @Override
     public void feed() {
         lastFed = LocalDateTime.now();
     }
 
-    @Override
     public boolean isHungry() {
         // Obviously an animal wouldn't get hungry in a matter of seconds.
         // But it means we can see activity in real time when we run the code...
         return Duration.between(LocalDateTime.now(), lastFed).compareTo(Config.getFeedingFrequency()) > 0;
     }
 
-    @Override
     public String toString() {
         return MessageFormat.format("{0}, last fed {1}", getClass().getSimpleName(), lastFed);
     }

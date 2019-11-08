@@ -6,15 +6,12 @@ import org.softwire.training.zoo.models.Keeper;
 import java.util.List;
 
 public class FeedingScheduler {
-    private static FeedingScheduler instance;
+    private static FeedingScheduler instance = new FeedingScheduler();
 
     private FeedingScheduler() {
     }
 
     public static FeedingScheduler getInstance() {
-        if (instance == null) {
-            instance = new FeedingScheduler();
-        }
         return instance;
     }
 
